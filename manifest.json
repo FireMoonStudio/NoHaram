@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "FireMoon NoHaram",
+  "version": "1.0",
+  "description": "Blurs inappropriate images automatically",
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": ["<all_urls>"],
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["face-api.min.js", "blur.js"]
+    }
+  ],
+
+  "web_accessible_resources": [
+    {
+      "resources": ["models/*"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
